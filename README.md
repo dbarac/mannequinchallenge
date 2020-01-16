@@ -68,6 +68,24 @@ To reproduce the numbers in Table 2 of the paper, run:
 
 Where `single_view` is the variant _I_ from the paper, `two_view` is the variant _IDCM_, and `two_view_k` is the variant _IDCMK_. The script prints running averages of the various error metrics as it runs. When the script completes, the final error metrics are shown.
 
+## Dodatno
+
+### Verzije paketa
+Dodan je requirements.txt file sa verzijama korištenih python paketa za lakšu instalaciju. Na listi je i opencv-python paket koji se koristi u skripti za pretvaranje videa u pojedine frame-ove.
+```
+pip install -r requirements.txt
+```
+### Testiranje modela na odabranim video datotekama
+
+Dodana skripta video2frames.py video datoteke dijeli na .jpeg frame-ove koji se koriste kao input za model. Frame-ovi se spremaju u test_data/user_data/.
+```
+(pytorch)$ python video2frames.py test-video.mp4
+```
+Nakon toga se pokreće skripta test_user_videos.py
+```
+ (pytorch)$ python test_user_videos.py --input=single_view
+```
+Rezultati će biti u test_data/viz_predictions/user_data/
 
 ## Acknowledgements
 
