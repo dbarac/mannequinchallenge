@@ -73,7 +73,7 @@ Where `single_view` is the variant _I_ from the paper, `two_view` is the variant
 ### Verzije paketa
 Dodan je requirements.txt file sa verzijama korištenih python paketa za lakšu instalaciju. Na listi je i opencv-python paket koji se koristi u skripti za pretvaranje videa u pojedine frame-ove.
 ```
-pip install -r requirements.txt
+(pytorch)$ pip install -r requirements.txt
 ```
 ### Testiranje modela na odabranim video datotekama
 
