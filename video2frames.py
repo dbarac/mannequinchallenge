@@ -8,14 +8,14 @@ if len(sys.argv) != 2:
 
 vidpath = sys.argv[1]
 vidcap = cv2.VideoCapture(vidpath)
-success,image = vidcap.read()
-count = 0
+
 f = open("test_data/test_user_video_list.txt", "w")
 
 frames_path = "test_data/user_data/"
 if not os.path.exists(frames_path):
 	    os.makedirs(frames_path)
-
+		
+count = 0
 while success:
 	success,image = vidcap.read()
 	img_name = "{:05d}.jpg".format(count)
