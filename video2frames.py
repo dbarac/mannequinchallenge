@@ -16,13 +16,14 @@ if not os.path.exists(frames_path):
 	    os.makedirs(frames_path)
 		
 count = 0
+success,image = vidcap.read()
 while success:
-	success,image = vidcap.read()
 	img_name = "{:05d}.jpg".format(count)
 	cv2.imwrite(frames_path + img_name, image)     # save frame as JPEG file      
 	f.write(frames_path + img_name + "\n")
 	print('Read a new frame: {}'.format(count), success)
 	count += 1
+	success,image = vidcap.read()
 
 f.close()
 
