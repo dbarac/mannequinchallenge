@@ -60,6 +60,7 @@ print(
     '============================= TUM Validation ============================'
 )
 model.switch_to_eval()
+save_path = 'test_data/viz_predictions/'
 
 for i, data in enumerate(dataset):
     print(i)
@@ -100,6 +101,8 @@ for i, data in enumerate(dataset):
     print('============== Sc-inv Env RMSE: %f' % sc_inv_env_rmse)
     print('============== rel_avg: %f' % rel_avg)
     print('============== rmse_avg: %f' % rmse_avg)
+    #
+    model.eval_save_tum_img(stacked_img, targets, save_path)
 
 sc_inv_rmse = float(total_si_error) / float(count)
 sc_inv_human_rmse = float(total_si_human_full_error) / float(count)
